@@ -1,0 +1,11 @@
+[project]
+name = "ntc-finrep"
+version = "1.0.0"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pyflakes>=4.0", "nbstripout>=0.8"]

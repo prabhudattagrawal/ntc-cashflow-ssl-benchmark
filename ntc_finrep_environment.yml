@@ -1,0 +1,5 @@
+name: ntc-finrep
+channels: [conda-forge]
+dependencies: [python=3.11, numpy, pandas, pyarrow, scikit-learn, scipy, lightgbm,
+               matplotlib, seaborn, pyyaml, joblib, pytest, pyflakes, nbstripout, jupyterlab, pip,
+               {pip: [torch]}]

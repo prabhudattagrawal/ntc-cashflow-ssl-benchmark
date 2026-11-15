@@ -1,0 +1,49 @@
+seed: 42
+seed_choices: [42, 123, 1331, 2023, 2027]
+data:
+  n_applicants: 48000
+  months_history: 12
+  # Outcome-equation intercept. -3.567 targets a ~12% realised 12-month default
+  # rate (the previous value, -2.47, produced ~24%). Lower values mean safer book.
+  base_default_logit: -3.567
+  months_future: 0
+  start_application_date: "2024-01-01"
+  end_application_date: "2026-12-31"
+  output_dir: "data/generated"
+  variable_history: false
+  min_history_months: 12
+  maturity_gap_months: 0
+  drift_start_application_date: null
+  drift_income_multiplier: 1.0
+  drift_obligation_delta: 0.0
+model:
+  embedding_dim: 32
+  attention_heads: 4
+  transformer_layers: 2
+  max_sequence_length: 272
+  mask_probability: 0.15
+  epochs: 20
+  batch_size: 64
+  learning_rate: 0.001
+  pretraining_validation_fraction: 0.1
+  early_stopping_patience: 4
+lgbm:
+  n_estimators: 350
+  learning_rate: 0.03
+  num_leaves: 15
+  max_depth: 5
+  min_child_samples: 30
+  reg_lambda: 2.0
+  colsample_bytree: 0.85
+  subsample: 0.85
+  subsample_freq: 1  # Required for subsample to take effect.
+experiment:
+  label_fractions: [0.05, 0.10, 0.25, 0.50, 1.0]
+  validation_fraction_by_time: 0.15
+  calibration_fraction_by_time: 0.05
+  test_fraction_by_time: 0.20
+  primary_label_fraction: 1.0
+  strong_baseline_grid:
+    n_estimators: [350, 500]
+    num_leaves: [15, 31]
+  output_dir: "artifacts"
