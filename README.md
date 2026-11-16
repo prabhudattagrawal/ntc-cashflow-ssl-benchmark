@@ -471,3 +471,72 @@ Run them with `python -m pytest -q`. They should all pass before you trust any r
 ## Licence
 
 See `LICENSE`.
+
+---
+
+## References and Acknowledgements
+
+### Research and technical references
+
+1. Vaswani, A., et al. (2017). *Attention Is All You Need*. Advances in Neural Information Processing Systems (NeurIPS).
+   https://arxiv.org/abs/1706.03762
+
+2. Ke, G., et al. (2017). *LightGBM: A Highly Efficient Gradient Boosting Decision Tree*. Advances in Neural Information Processing Systems (NeurIPS).
+   https://papers.nips.cc/paper/2017/hash/6449f44a102fde848669bdd9eb6b76fa-Abstract.html
+
+3. Chen, T., & Guestrin, C. (2016). *XGBoost: A Scalable Tree Boosting System*. Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining.
+   https://doi.org/10.1145/2939672.2939785
+
+4. Saito, T., & Rehmsmeier, M. (2015). *The Precision-Recall Plot Is More Informative than the ROC Plot When Evaluating Binary Classifiers on Imbalanced Datasets*. PLOS ONE, 10(3).
+   https://doi.org/10.1371/journal.pone.0118432
+
+5. Lundberg, S. M., & Lee, S. I. (2017). *A Unified Approach to Interpreting Model Predictions*. Advances in Neural Information Processing Systems (NeurIPS).
+   https://arxiv.org/abs/1705.07874
+
+### Software and libraries
+
+The project uses the following open-source libraries and frameworks:
+
+- **Python:** Core programming language — https://www.python.org/
+- **Pandas:** Data manipulation and analysis — https://pandas.pydata.org/
+- **NumPy:** Numerical computing — https://numpy.org/
+- **Scikit-learn:** Machine learning, preprocessing and evaluation — https://scikit-learn.org/
+- **PyTorch:** Transformer architecture and representation learning — https://pytorch.org/
+- **LightGBM:** Gradient boosting models — https://lightgbm.readthedocs.io/
+- **Matplotlib:** Data visualisation — https://matplotlib.org/
+- **Seaborn:** Statistical data visualisation — https://seaborn.pydata.org/
+- **Jupyter:** Interactive computational notebooks — https://jupyter.org/
+
+### AI assistance and acknowledgements
+
+Two AI assistants were used at different stages of this project. In both cases the output was reviewed, adapted and validated by the author, and the synthetic data generation, experimental implementation, execution and interpretation of results remain the author's responsibility and are subject to the assumptions and limitations documented in this project.
+
+#### Claude (Anthropic), free version
+
+**Claude (Anthropic)**, used in its free version, was an AI-assisted development and research support tool throughout this project. Its assistance included:
+
+- Supporting project architecture and modelling methodology discussions.
+- Assisting with Python code development, implementation and debugging.
+- Reviewing code structure, identifying potential issues and suggesting improvements.
+- Supporting exploratory data analysis, statistical evaluation and visualisation.
+- Assisting with experimental design, interpretation of model results and documentation.
+- Reviewing research conclusions and improving technical writing.
+
+#### DeepSeek V4.1 Flash (DeepSeek), via the OpenCode coding agent
+
+**DeepSeek V4.1 Flash (DeepSeek)**, accessed through the OpenCode coding agent, was used for a verification-focused review pass over the consolidated notebook and its Python dependencies. Its assistance included:
+
+- Auditing the notebook and the `src/` modules for target leakage, generator-only fields used as model inputs, and stale feature names.
+- Checking that every reported metric in the narrative matched the regenerated artefacts under `artifacts/`.
+- Reviewing the synthetic data generator and cash-flow feature engineering for consistency with the documented methodology and with the leakage safeguards.
+- Verifying import resolution, configuration values and cross-references, and running the automated test suite.
+- Supporting documentation cleanup and consistency of the reproducibility log after the full pipeline rerun.
+
+#### AI tool references
+
+- Anthropic. (2026). *Claude* [Large language model], free version. https://claude.ai/
+- DeepSeek. (2026). *DeepSeek V4.1 Flash* [Large language model], accessed via OpenCode. https://www.deepseek.com/
+
+### Data disclaimer
+
+All applicant and transaction records used in this project are synthetically generated for research and demonstration purposes. They do not represent actual customers, financial institutions or real credit outcomes. Model performance and conclusions are therefore conditional on the assumptions embedded in the synthetic data-generation process and should not be generalised to real-world credit portfolios without independent validation.
